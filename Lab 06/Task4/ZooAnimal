@@ -1,0 +1,44 @@
+#ifndef ZOOANIMAL_H
+#define  ZOOANIMAL_H
+
+# include <iostream>
+using namespace std;
+
+class ZooAnimal{
+
+    private:
+        string nameOfAnimal;
+        int birthYear, cageNumber, height;
+        float weightData;
+    public:
+
+        //tructors
+        ZooAnimal(string name="", int birth=2023, int cage=0,int wt=1, int ht=1);
+        ~ ZooAnimal();
+
+        //get-set
+        void setName(string nm);
+        void setBY(int y);
+        void setCage(int k);
+        void setW(int y);
+        void setH(int y);
+        int getAge() const;
+        string getName() const;
+        int getBY() const;
+        int getW() const;
+        int getH() const;
+        int getCage() const;
+        void displayInfo() const;
+
+        //overloaded
+        bool operator>(const ZooAnimal& z) const;
+        bool operator<(const ZooAnimal& z) const;
+        bool operator>=(const ZooAnimal& z) const;
+        bool operator<=(const ZooAnimal& z) const;
+        bool operator==(const ZooAnimal& z) const;
+        bool operator!=(const ZooAnimal& z) const;
+        void operator+=(const int add);
+        void operator-=(const int rmv);
+};
+
+#endif //ZOOANIMAL_H

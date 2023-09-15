@@ -1,0 +1,21 @@
+#ifndef RATIONALNUMBER_H
+#define RATIONALNUMBER_H
+
+class RationalNumber{
+    private:
+        int p, q;
+    public:
+        RationalNumber(int numerator, int denominator);
+        void setNum(int numerator, int denominator);;
+        void mutator(int numer, int denom);
+        void getNum() const;
+        int getNumerator() const;
+        int getDenominator() const;
+
+        RationalNumber operator+(const RationalNumber operand) const;
+        RationalNumber operator-(const RationalNumber operand) const;
+        RationalNumber operator*(const RationalNumber operand) const;
+        RationalNumber operator/(const RationalNumber operand) const;
+};
+
+#endif //RATIONALNUMBER_H

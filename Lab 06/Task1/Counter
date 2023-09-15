@@ -1,0 +1,31 @@
+#ifndef COUNTER_H
+#define COUNTER_H
+
+class Counter{
+
+    private:
+        int count;
+        int incrmnt;
+
+    public:
+
+        Counter(int kount =0, int init=1);
+        void setIncrementStep(int step = 1);
+        int getCount() const;
+        void increment();
+        void resetCount();
+
+        // operator
+        bool operator>(const Counter& c) const;
+        bool operator<(const Counter& c) const;
+        bool operator>=(const Counter& c) const;
+        bool operator<=(const Counter& c) const;
+        bool operator==(const Counter& c) const;
+        bool operator!=(const Counter& c) const;
+        Counter operator+(const Counter& c) const;
+        Counter operator+=(const Counter& c);
+        Counter operator++(int);
+        Counter operator++();
+};
+
+#endif //COUNTER_H

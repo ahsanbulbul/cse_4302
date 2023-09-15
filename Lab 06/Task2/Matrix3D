@@ -1,0 +1,25 @@
+#ifndef MATRIX3D_H
+#define MATRIX3D_H
+
+class Matrix3D{
+    private:
+        double matrix[3][3];
+        void swap(double& a, double& b);
+    public:
+        // tructor
+        Matrix3D(double mtrx[3][3]);
+        ~ Matrix3D();
+
+        // fn
+        double det() const;
+        const Matrix3D inverse();
+        void getMatrix() const;
+
+        //overloading
+        Matrix3D operator+(const Matrix3D& operand) const;
+        Matrix3D operator-(const Matrix3D& operand) const;
+        Matrix3D operator*(const Matrix3D& operand) const;
+        
+};
+
+#endif
