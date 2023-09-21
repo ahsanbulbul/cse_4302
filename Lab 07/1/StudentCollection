@@ -1,0 +1,18 @@
+#ifndef STU_H
+#define STU_H
+#include <iostream>
+#include <string>
+using namespace std;
+
+class StudentCollection{
+    private: 
+        string names[10];
+        double grades[10];
+        int counter;
+        double *nl=nullptr;//For bypassing compiler error
+    public:
+        double& operator[] ( string name);
+        void addStudent (string name, double grade);
+   
+};
+#endif

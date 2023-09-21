@@ -1,0 +1,78 @@
+#ifndef CLS_H
+#define CLS_H
+#include <iostream>
+
+class CurrencyDollar{
+    private:
+        int dollars;
+        int cents;
+
+    public:
+        CurrencyDollar(): dollars(0), cents(0){};
+        CurrencyDollar(int dlr, int cnt){
+            dollars=dlr;
+            cents=cnt;
+        };
+
+        void get(){
+            std::cout<<dollars<<"."<<cents<<std::endl;
+        }
+};
+
+class CurrencyEuro{
+    private:
+        int euros;
+        int cents;
+
+    public:
+        CurrencyEuro(): euros(0), cents(0){};
+        CurrencyEuro(int uro, int cnt){
+            euros=uro;
+            cents=cnt;
+        };
+
+        void get(){
+            std::cout<<euros<<"."<<cents<<std::endl;
+        }
+};
+
+class CurrencyBDT{
+    private:
+        int taka;
+        int paisa;
+        const double tk2dlr=0.0091;
+        const double tk2uro=0.0085;
+
+    public:
+        CurrencyBDT(): taka(0), paisa(0){};
+        CurrencyBDT(int tk, int ps){
+            taka=tk;
+            paisa=ps;
+        }
+        
+        operator CurrencyEuro() const{
+
+            double total=taka*100+paisa;
+            // std::cout<<"Total: "<<total<<std::endl;
+
+            double uro=(total*tk2uro/100);
+            double cnt=total-uro*100;
+
+            return CurrencyEuro(uro, cnt);
+        }
+
+        operator CurrencyDollar() const{
+
+            double total=taka*100+paisa;
+
+            double dollan=(total*tk2dlr/100);
+            double cnt=total-dollan*100;
+
+            return CurrencyDollar(dollan, cnt);
+        }
+        void get(){
+            std::cout<<taka<<"."<<paisa<<std::endl;
+        }
+};
+
+#endif
