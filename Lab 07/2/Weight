@@ -1,0 +1,20 @@
+#ifndef WT_H
+#define WT_H
+
+class Weight{
+    private:
+        const double kgToPound=2.204623;//1kg equiv pound
+        int pound;
+        double ounce;
+
+        double pound2ounce=16;//conv. rate
+
+    public:
+        Weight();
+        Weight(double kg);
+        Weight(int pound, double ounce);
+        void showWeight() const;
+
+        operator double() const;
+};
+#endif
