@@ -1,0 +1,27 @@
+#ifndef EMP_H
+#define EMP_H
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee{
+    private:
+        string name;
+        string emp_id;
+        float monthly_salary;
+        bool onDuty;
+
+    public:
+
+        Employee(string nm, string eid, float msal,bool duty);
+
+        string getname();
+        string getemp_id();
+        float getmonthly_salary();
+        bool getonDuty();
+        float getyearly_salary();
+
+
+};
+#endif

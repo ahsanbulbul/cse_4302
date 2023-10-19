@@ -1,0 +1,23 @@
+#ifndef DERIVED_H
+#define DERIVED_H
+
+#include "Employee"
+
+
+class Manager: public Employee{
+    public:
+        Manager(string nm, string eid, bool duty);
+            
+};
+class Engineer: public Employee{
+    public:
+        Engineer(string nm, string eid, bool duty);
+
+};
+class Designer: public Employee{
+    public:
+        Designer(string nm, string eid, bool duty);
+
+};
+
+#endif
