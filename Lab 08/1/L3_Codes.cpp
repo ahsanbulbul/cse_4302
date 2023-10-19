@@ -26,3 +26,4 @@ int InitialDepositMDS::getinitialdepositamount() const{
 void InitialDepositMDS::setinitialdepositamount(int initdeposit){
     initialdepositamount=initdeposit;
 }
+

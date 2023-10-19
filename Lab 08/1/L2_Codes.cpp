@@ -31,6 +31,18 @@ string CurrentAccount::nextAccounter() {
     return to_string(CurrentAccount::serial) + to_string(CurrentAccount::nextAccount);
 }
 
-string SavingsAccount::nextAccounter() {
+string LoanAccount::nextAccounter() {
     return to_string(LoanAccount::serial) + to_string(LoanAccount::nextAccount);
+}
+
+CurrentAccount::CurrentAccount() {
+    setaccountNo(nextAccounter());
+}
+
+SavingsAccount::SavingsAccount() {
+    setaccountNo(nextAccounter());
+}
+
+MonthlyDepositScheme::MonthlyDepositScheme() {
+    setaccountNo(nextAccounter());
 }

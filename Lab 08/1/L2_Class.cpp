@@ -18,7 +18,6 @@ class CurrentAccount: public Account {
     public:
         CurrentAccount();
 
-
 };
 
 
@@ -33,6 +32,7 @@ class SavingsAccount: public Account {
         string nextAccounter();
 
     public:
+        SavingsAccount();
 };
 
 
@@ -47,6 +47,8 @@ class MonthlyDepositScheme: public Account {
         string nextAccounter();
 
     public:
+        MonthlyDepositScheme();
+
 };
 
 
